@@ -1,0 +1,131 @@
+body {
+  width: 100%;
+  background-color: lightseagreen;
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+#container {
+  width: 960px;
+  margin: 0 auto;
+}
+h1 {
+  width: auto;
+  margin: 0 auto;
+  font-size: 4em;
+  text-align: center;
+  margin:10px 0;
+  color: lightgrey;
+  -webkit-text-stroke-width: 0.01em;
+  -webkit-text-stroke-color: black;
+  display: inline-block;
+}
+h2 {
+  width: auto;
+  margin: 0 auto;
+  font-size: 3em;
+  text-align: center;
+  margin:10px 0;
+  color: lightgrey;
+  -webkit-text-stroke-width: 0.01em;
+  -webkit-text-stroke-color: black;
+  display: inline-block;
+}
+h3 {
+  font-size: 2em;
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+h4 {
+  font-size: 1em;
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+#playerTitle {
+  font-size: 1.25em;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+#compTitle {
+  font-size: 1.25em;
+  margin: 0 auto;
+  padding-top: 10px;
+  color: #fff;
+}
+.board {
+  width: 35%;
+  height: 350px;
+  background-color: #fff;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 12px;
+  display: inline-block;
+  -moz-box-shadow:    3px 3px 25px 2px #333;
+  -webkit-box-shadow: 3px 3px 25px 2px #333;
+  box-shadow: 3px 3px 25px 2px #333;
+}
+.player {
+  margin-right: 100px;
+}
+.computer {
+  background-color: #333;
+}
+.rowA {
+  margin: 0 auto;
+}
+.rowB {
+  margin: 0 auto;
+}
+.rowC {
+  margin: 0 auto;
+}
+.rowD {
+  margin: 0 auto;
+}
+.rowE {
+  margin: 0 auto;
+}
+.rowF {
+  margin: 0 auto;
+}
+.rowG {
+  margin: 0 auto;
+}
+.rowH {
+  margin: 0 auto;
+}
+.rowI {
+  margin: 0 auto;
+}
+.rowJ  {
+  margin: 0 auto;
+}
+.spot {
+  width:50px;
+  height:50px;
+  background-color: lightgrey;
+  display:inline-block;
+  font-size: 0.825em;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid black;
+  margin: 4px;
+}
+
+#patrolBoat {
+  display:inline-block;
+  margin-right:4em;
+}
+#destroyer {
+  display:inline-block;
+  margin-right:4em;
+}
+#submarine {
+  display:inline-block;
+}
+button[name="start"]   {
+  margin-top: 20px;
+  font-size:1.25em;
+  font-family: 'Cabin', sans-serif;
+  border-radius: 5px;
+}

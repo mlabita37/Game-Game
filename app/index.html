@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ShipStrike</title>
+    <link href='https://fonts.googleapis.com/css?family=Cabin:500,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>S<h1><h2>HIP</h2><h1>S</h1><h2>TRIKE</h2>
+      <div id="start">Select your ship locations, then press START to begin!</div>
+      <div class="board player">
+      <section class="rowA">
+        <div class="spot" id="a1">A1</div>
+        <div class="spot" id="a2">A2</div>
+        <div class="spot" id="a3">A3</div>
+        <div class="spot" id="a4">A4</div>
+        <div class="spot" id="a5">A5</div>
+      </section>
+      <section class="rowB">
+        <div class="spot" id="b1">B1</div>
+        <div class="spot" id="b2">B2</div>
+        <div class="spot" id="b3">B3</div>
+        <div class="spot" id="b4">B4</div>
+        <div class="spot" id="b5">B5</div>
+      </section>
+      <section class="rowC">
+        <div class="spot" id="c1">C1</div>
+        <div class="spot" id="c2">C2</div>
+        <div class="spot" id="c3">C3</div>
+        <div class="spot" id="c4">C4</div>
+        <div class="spot" id="c5">C5</div>
+      </section>
+      <section class="rowD">
+        <div class="spot" id="d1">D1</div>
+        <div class="spot" id="d2">D2</div>
+        <div class="spot" id="d3">D3</div>
+        <div class="spot" id="d4">D4</div>
+        <div class="spot" id="d5">D5</div>
+    </section>
+    <section class="rowE">
+        <div class="spot" id="e1">E1</div>
+        <div class="spot" id="e2">E2</div>
+        <div class="spot" id="e3">E3</div>
+        <div class="spot" id="e4">E4</div>
+        <div class="spot" id="e5">E5</div>
+    </section>
+        <div id="playerTitle">Player 1</div>
+    </div><!-- End Player Board -->
+
+    <div class="board computer">
+    <section class="rowA">
+        <div class="spot" id="a1">A1</div>
+        <div class="spot" id="a2">A2</div>
+        <div class="spot" id="a3">A3</div>
+        <div class="spot" id="a4">A4</div>
+        <div class="spot" id="a5">A5</div>
+    </section>
+    <section class="rowB">
+        <div class="spot" id="b1">B1</div>
+        <div class="spot" id="b2">B2</div>
+        <div class="spot" id="b3">B3</div>
+        <div class="spot" id="b4">B4</div>
+        <div class="spot" id="b5">B5</div>
+    </section>
+    <section class="rowC">
+      <div class="spot" id="c1">C1</div>
+      <div class="spot" id="c2">C2</div>
+      <div class="spot" id="c3">C3</div>
+      <div class="spot" id="c4">C4</div>
+      <div class="spot" id="c5">C5</div>
+      </section>
+    <section class="rowD">
+      <div class="spot" id="d1">D1</div>
+      <div class="spot" id="d2">D2</div>
+      <div class="spot" id="d3">D3</div>
+      <div class="spot" id="d4">D4</div>
+      <div class="spot" id="d5">D5</div>
+    </section>
+    <section class="rowE">
+      <div class="spot" id="e1">E1</div>
+      <div class="spot" id="e2">E2</div>
+      <div class="spot" id="e3">E3</div>
+      <div class="spot" id="e4">E4</div>
+      <div class="spot" id="e5">E5</div>
+    </section>
+    <div id="compTitle">Computer</div>
+    </div><!--- End Computer Board-->
+
+    <section id="ships">
+      <h3>Ships:</h3>
+    <div id="patrolBoat">
+      <h4>Patrol Boat: 2 Spaces</h4>
+    <select name="patrolSelectOne" id="pSelectOne">
+        <option value="a1">A1</option>
+        <option value="a2">A2</option>
+        <option value="a3">A3</option>
+        <option value="a4">A4</option>
+        <option value="a5">A5</option>
+        <option value="b1">B1</option>
+        <option value="b2">B2</option>
+        <option value="b3">B3</option>
+        <option value="b4">B4</option>
+        <option value="b5">B5</option>
+        <option value="c1">C1</option>
+        <option value="c2">C2</option>
+        <option value="c3">C3</option>
+        <option value="c4">C4</option>
+        <option value="c5">C5</option>
+        <option value="d1">D1</option>
+        <option value="d2">D2</option>
+        <option value="d3">D3</option>
+        <option value="d4">D4</option>
+        <option value="d5">D5</option>
+        <option value="e1">E1</option>
+        <option value="e2">E2</option>
+        <option value="e3">E3</option>
+        <option value="e4">E4</option>
+        <option value="e5">E5</option>
+    </select>
+    <select name="patrolSelectTwo" id="pSelect2">
+        <option value="a1">A1</option>
+        <option value="a2">A2</option>
+        <option value="a3">A3</option>
+        <option value="a4">A4</option>
+        <option value="a5">A5</option>
+        <option value="b1">B1</option>
+        <option value="b2">B2</option>
+        <option value="b3">B3</option>
+        <option value="b4">B4</option>
+        <option value="b5">B5</option>
+        <option value="c1">C1</option>
+        <option value="c2">C2</option>
+        <option value="c3">C3</option>
+        <option value="c4">C4</option>
+        <option value="c5">C5</option>
+        <option value="d1">D1</option>
+        <option value="d2">D2</option>
+        <option value="d3">D3</option>
+        <option value="d4">D4</option>
+        <option value="d5">D5</option>
+        <option value="e1">E1</option>
+        <option value="e2">E2</option>
+        <option value="e3">E3</option>
+        <option value="e4">E4</option>
+        <option value="e5">E5</option>
+    </select>
+       <button id="enter" name="patrol">Enter</button>
+  </div><!-- End PatrolBoat -->
+
+  <div id="destroyer">
+    <h4>Destroyer: 2 Spaces</h4>
+    <select name="dSelectOne" id="dSelectOne">
+        <option value="a1">A1</option>
+        <option value="a2">A2</option>
+        <option value="a3">A3</option>
+        <option value="a4">A4</option>
+        <option value="a5">A5</option>
+        <option value="b1">B1</option>
+        <option value="b2">B2</option>
+        <option value="b3">B3</option>
+        <option value="b4">B4</option>
+        <option value="b5">B5</option>
+        <option value="c1">C1</option>
+        <option value="c2">C2</option>
+        <option value="c3">C3</option>
+        <option value="c4">C4</option>
+        <option value="c5">C5</option>
+        <option value="d1">D1</option>
+        <option value="d2">D2</option>
+        <option value="d3">D3</option>
+        <option value="d4">D4</option>
+        <option value="d5">D5</option>
+        <option value="e1">E1</option>
+        <option value="e2">E2</option>
+        <option value="e3">E3</option>
+        <option value="e4">E4</option>
+        <option value="e5">E5</option>
+    </select>
+    <select name="dSelectTwo" id="dSelectTwo">
+        <option value="a1">A1</option>
+        <option value="a2">A2</option>
+        <option value="a3">A3</option>
+        <option value="a4">A4</option>
+        <option value="a5">A5</option>
+        <option value="b1">B1</option>
+        <option value="b2">B2</option>
+        <option value="b3">B3</option>
+        <option value="b4">B4</option>
+        <option value="b5">B5</option>
+        <option value="c1">C1</option>
+        <option value="c2">C2</option>
+        <option value="c3">C3</option>
+        <option value="c4">C4</option>
+        <option value="c5">C5</option>
+        <option value="d1">D1</option>
+        <option value="d2">D2</option>
+        <option value="d3">D3</option>
+        <option value="d4">D4</option>
+        <option value="d5">D5</option>
+        <option value="e1">E1</option>
+        <option value="e2">E2</option>
+        <option value="e3">E3</option>
+        <option value="e4">E4</option>
+        <option value="e5">E5</option>
+    </select>
+        <button id="enter" name="destroy">Enter</button>
+  </div><!-- End Destroyer -->
+
+  <div id="submarine">
+    <h4>Submarine: 3 Spaces</h4>
+    <select name="subSelectOne" id="sSelectOne">
+        <option value="a1">A1</option>
+        <option value="a2">A2</option>
+        <option value="a3">A3</option>
+        <option value="a4">A4</option>
+        <option value="a5">A5</option>
+        <option value="b1">B1</option>
+        <option value="b2">B2</option>
+        <option value="b3">B3</option>
+        <option value="b4">B4</option>
+        <option value="b5">B5</option>
+        <option value="c1">C1</option>
+        <option value="c2">C2</option>
+        <option value="c3">C3</option>
+        <option value="c4">C4</option>
+        <option value="c5">C5</option>
+        <option value="d1">D1</option>
+        <option value="d2">D2</option>
+        <option value="d3">D3</option>
+        <option value="d4">D4</option>
+        <option value="d5">D5</option>
+        <option value="e1">E1</option>
+        <option value="e2">E2</option>
+        <option value="e3">E3</option>
+        <option value="e4">E4</option>
+        <option value="e5">E5</option>
+    </select>
+    <select name="subSelectTwo" id="sSelectTwo">
+        <option value="a1">A1</option>
+        <option value="a2">A2</option>
+        <option value="a3">A3</option>
+        <option value="a4">A4</option>
+        <option value="a5">A5</option>
+        <option value="b1">B1</option>
+        <option value="b2">B2</option>
+        <option value="b3">B3</option>
+        <option value="b4">B4</option>
+        <option value="b5">B5</option>
+        <option value="c1">C1</option>
+        <option value="c2">C2</option>
+        <option value="c3">C3</option>
+        <option value="c4">C4</option>
+        <option value="c5">C5</option>
+        <option value="d1">D1</option>
+        <option value="d2">D2</option>
+        <option value="d3">D3</option>
+        <option value="d4">D4</option>
+        <option value="d5">D5</option>
+        <option value="e1">E1</option>
+        <option value="e2">E2</option>
+        <option value="e3">E3</option>
+        <option value="e4">E4</option>
+        <option value="e5">E5</option>
+    </select>
+    <select name="subSelectThree" id="sSelectThree">
+        <option value="a1">A1</option>
+        <option value="a2">A2</option>
+        <option value="a3">A3</option>
+        <option value="a4">A4</option>
+        <option value="a5">A5</option>
+        <option value="b1">B1</option>
+        <option value="b2">B2</option>
+        <option value="b3">B3</option>
+        <option value="b4">B4</option>
+        <option value="b5">B5</option>
+        <option value="c1">C1</option>
+        <option value="c2">C2</option>
+        <option value="c3">C3</option>
+        <option value="c4">C4</option>
+        <option value="c5">C5</option>
+        <option value="d1">D1</option>
+        <option value="d2">D2</option>
+        <option value="d3">D3</option>
+        <option value="d4">D4</option>
+        <option value="d5">D5</option>
+        <option value="e1">E1</option>
+        <option value="e2">E2</option>
+        <option value="e3">E3</option>
+        <option value="e4">E4</option>
+        <option value="e5">E5</option>
+    </select>
+      <button id="enter" name="sub">Enter</button>
+    </div><!-- End Submarine -->
+  </section>
+  <button type="button" name="start">START</button><!-- Start Button -->
+</div><!--- End Container -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" charset="utf-8"></script>
+<script src="js/scripts.js" charset="utf-8"></script>
+</body>
+</html>
