@@ -8,6 +8,7 @@ body {
 #container {
   width: 960px;
   margin: 0 auto;
+  overflow: auto;
 }
 h1 {
   width: auto;
@@ -43,68 +44,53 @@ h4 {
 }
 #playerTitle {
   font-size: 1.25em;
-  margin: 0 auto;
-  padding-top: 10px;
+  margin: 0 47% 0 0;
 }
-#compTitle {
+#computerTitle {
   font-size: 1.25em;
-  margin: 0 auto;
-  padding-top: 10px;
+
   color: #fff;
 }
-.board {
-  width: 35%;
+.boards {
+  width: 100%;
+  height: 400px;
+  margin-top: 25px;
+}
+.col {
+  width: 49%;
+  margin: 0 auto;
+  padding: 0;
+}
+table  {
+  width: 33%;
   height: 350px;
   background-color: #fff;
   margin-top: 20px;
   text-align: center;
-  padding-top: 12px;
-  display: inline-block;
+  padding: 4px;
   -moz-box-shadow:    3px 3px 25px 2px #333;
   -webkit-box-shadow: 3px 3px 25px 2px #333;
   box-shadow: 3px 3px 25px 2px #333;
 }
-.player {
+#playerBoard {
   margin-right: 100px;
+  float:left;
+  margin-left: 10%;
 }
-.computer {
+#computerBoard {
+  float:right;
+  margin-right: 10%;
   background-color: #333;
 }
-.rowA {
+
+tr {
   margin: 0 auto;
 }
-.rowB {
-  margin: 0 auto;
-}
-.rowC {
-  margin: 0 auto;
-}
-.rowD {
-  margin: 0 auto;
-}
-.rowE {
-  margin: 0 auto;
-}
-.rowF {
-  margin: 0 auto;
-}
-.rowG {
-  margin: 0 auto;
-}
-.rowH {
-  margin: 0 auto;
-}
-.rowI {
-  margin: 0 auto;
-}
-.rowJ  {
-  margin: 0 auto;
-}
-.spot {
+
+td {
   width:50px;
   height:50px;
   background-color: lightgrey;
-  display:inline-block;
   font-size: 0.825em;
   font-weight: 700;
   text-align: center;
@@ -123,9 +109,15 @@ h4 {
 #submarine {
   display:inline-block;
 }
-button[name="start"]   {
-  margin-top: 20px;
+.start   {
+  margin-top: 30px;
   font-size:1.25em;
   font-family: 'Cabin', sans-serif;
   border-radius: 5px;
+}
+
+#newText {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 30px;
 }
