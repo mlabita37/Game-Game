@@ -8,10 +8,11 @@
   </head>
   <body>
     <div id="container">
-      <h1>S<h1><h2>HIP</h2><h1>S</h1><h2>TRIKE</h2>
-      <div id="start">Select your ship locations, then press START to begin!</div>
+      <h1>S<h1><h2>HIP</h2>&nbsp;<h1>S</h1><h2>TRIKE</h2><link href='https://fonts.googleapis.com/css?family=Quantico:400,700' rel='stylesheet' type='text/css'>
+      <div id="banner">Select your ship locations, then press <span class='colorGrey'>START</span> to begin!</div>
       <section class="boards">
           <table id="playerBoard">
+            <caption>Player 1</caption>
             <tr class="rowA">
               <td class="playerCell" value=0 id=0>A1</td>
               <td class="playerCell" value=1 id=1>A2</td>
@@ -50,6 +51,7 @@
         </table><!-- End Player Board -->
 
         <table id="computerBoard">
+          <caption>Computer</caption>
           <tr class="rowA">
             <td class="computerCell" value=0>A1</td>
             <td class="computerCell" value=1>A2</td>
@@ -89,9 +91,9 @@
 </section><!-- End Boards Section -->
 
     <section id="ships">
-      <h3>Ships:</h3>
+      <h3>Choose Your Ships:</h3>
     <div id="patrolBoat">
-      <h4>Patrol Boat: 2 Spaces</h4>
+      <h4>Patrol Boat: <span class="colorGrey">2</span>  Spaces</h4>
     <select id="pSelectOne">
         <option value=0>A1</option>
         <option value=1>A2</option>
@@ -150,7 +152,7 @@
   </div><!-- End PatrolBoat -->
 
   <div id="destroyer">
-    <h4>Destroyer: 2 Spaces</h4>
+    <h4>Destroyer: <span class="colorGrey">2</span> Spaces</h4>
     <select id="dSelectOne">
         <option value=0>A1</option>
         <option value=1>A2</option>
@@ -209,7 +211,7 @@
   </div><!-- End Destroyer -->
 
   <div id="submarine">
-    <h4>Submarine: 3 Spaces</h4>
+    <h4>Submarine: <span class="colorGrey">3</span> Spaces</h4>
     <select id="sSelectOne">
         <option value=0>A1</option>
         <option value=1>A2</option>
