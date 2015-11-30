@@ -22,9 +22,7 @@ window.onload = function() {
   newGame.setPatrol();
   newGame.setDestroyer();
   newGame.setSubmarine();
-  var computerLocations = newGame.setComputer();
   newGame.startGame();
-  newGame.playerMove(computerLocations);
 };
 
 
@@ -182,8 +180,8 @@ ShipStrikeGame.prototype.colorSubmarineDivs = function(sValue) {
     }
 };
 
-
 ShipStrikeGame.prototype.setComputer = function() {
+  var computerLocations;
   var firstSpot = twoSpotLocations[Math.floor(Math.random() * twoSpotLocations.length)];
   var secondSpot = twoSpotLocations[Math.floor(Math.random() * twoSpotLocations.length)];
   var firstSplit = firstSpot.split(',');
@@ -208,7 +206,7 @@ ShipStrikeGame.prototype.setComputer = function() {
       thirdSpot = thirdSpot;
     }
   }
-  var computerLocations = [];
+  computerLocations = [];
   computerLocations.push(firstSpot);
   computerLocations.push(secondSpot);
   computerLocations.push(thirdSpot);
@@ -230,14 +228,19 @@ $('.start').on('click', function() {
   var $shipSection = $('#ships');
   $shipSection.append($newText);
   $newText.text("To begin, click a location on the computer's board to attack!");
+  scope.setComputer();
+  scope.playerMove();
 })
 };
 
 
-ShipStrikeGame.prototype.playerMove = function(computerLocations, pValue, dValue, sValue) {
+ShipStrikeGame.prototype.playerMove = function(pValue, dValue, sValue) {
 var scope = this;
 var playerScore = 0;
 $('.computerCell').on('click', function(){
+  computerLocations = scope.computerLocations;
+  console.log(pValue);
+  console.log(computerLocations);
   var $compCell = $(this);
   var $compCellVal = $compCell.attr('value');
   var compArray = [];
