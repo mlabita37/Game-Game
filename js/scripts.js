@@ -15,6 +15,12 @@ function ShipStrikeGame () {
     '15', '16', '17', '18', '19',
     '20', '21', '22', '23', '24'
   ];
+  this.computerLocations = [];
+  this.pValue = "";
+  this.dValue = "";
+  this.sValue = "";
+  this.playerScore = 0;
+  this.compScore = 0;
 }
 
 window.onload = function() {
@@ -27,86 +33,24 @@ window.onload = function() {
 
 
 var twoSpotLocations = [
-  '0,1',
-  '0,5',
-  '1,2',
-  '1,6',
-  '2,3',
-  '2,7',
-  '3,4',
-  '3,8',
-  '4,9',
-  '5,6',
-  '5,10',
-  '6,7',
-  '6,11',
-  '7,8',
-  '7,12',
-  '8,9',
-  '8,13',
-  '9,14',
-  '10,11',
-  '10,15',
-  '11,12',
-  '11,16',
-  '12,13',
-  '12,17',
-  '13,14',
-  '13,18',
-  '14,19',
-  '15,16',
-  '15,20',
-  '16,17',
-  '16,21',
-  '17,18',
-  '17,22',
-  '18,19',
-  '18,23',
-  '19,24',
-  '20,21',
-  '21,22',
-  '22,23',
-  '23,24'
+  '0,1','0,5','1,2','1,6','2,3','2,7','3,4','3,8','4,9','5,6',
+  '5,10','6,7','6,11','7,8','7,12','8,9','8,13','9,14','10,11','10,15',
+  '11,12','11,16','12,13','12,17','13,14','13,18','14,19','15,16','15,20','16,17',
+  '16,21','17,18','17,22','18,19','18,23','19,24','20,21','21,22','22,23','23,24'
 ];
 
 var threeSpotLocations = [
-  '0,1,2',
-  '0,5,10',
-  '1,2,3',
-  '1,6,11',
-  '2,3,4',
-  '2,7,12',
-  '3,8,13',
-  '4,9,14',
-  '5,6,7',
-  '5,10,15',
-  '6,7,8',
-  '6,11,16',
-  '7,8,9',
-  '7,12,17',
-  '8,13,18',
-  '9,14,19',
-  '10,11,12',
-  '10,15,20',
-  '11,12,13',
-  '11,16,21',
-  '12,13,14',
-  '12,17,22',
-  '13,18,23',
-  '14,19,24',
-  '15,16,17',
-  '16,17,18',
-  '17,18,19',
-  '20,21,22',
-  '21,22,23',
-  '22,23,24'
+  '0,1,2','0,5,10','1,2,3','1,6,11','2,3,4','2,7,12','3,8,13','4,9,14','5,6,7','5,10,15',
+  '6,7,8','6,11,16','7,8,9','7,12,17','8,13,18','9,14,19','10,11,12','10,15,20','11,12,13','11,16,21',
+  '12,13,14','12,17,22','13,18,23','14,19,24','15,16,17','16,17,18','17,18,19','20,21,22','21,22,23','22,23,24'
 ];
 
 // Store the ENTER values in variables AND call the div coloring functions
 ShipStrikeGame.prototype.setPatrol = function() {
   var scope = this;
   $('#pEnter').on('click', function(){
-    var pValue = $('#pSelectOne').val() + ',' + $('#pSelectTwo').val();
+    pValue = scope.pValue;
+    pValue = $('#pSelectOne').val() + ',' + $('#pSelectTwo').val();
     scope.colorPatrolDivs(pValue);
     console.log(pValue);
     return pValue;
@@ -116,7 +60,8 @@ ShipStrikeGame.prototype.setPatrol = function() {
 ShipStrikeGame.prototype.setDestroyer = function() {
   var scope = this;
 $('#dEnter').on('click', function(){
-  var dValue = $('#dSelectOne').val() + ',' + $('#dSelectTwo').val();
+  dValue = scope.dValue;
+  dValue = $('#dSelectOne').val() + ',' + $('#dSelectTwo').val();
   scope.colorDestroyerDivs(dValue);
   console.log(dValue);
   return dValue;
@@ -126,7 +71,8 @@ $('#dEnter').on('click', function(){
 ShipStrikeGame.prototype.setSubmarine = function() {
   var scope = this;
 $('#sEnter').on('click', function(){
-  var sValue = $('#sSelectOne').val() + ',' + $('#sSelectTwo').val() + ',' + $('#sSelectThree').val();
+  sValue = scope.sValue;
+  sValue = $('#sSelectOne').val() + ',' + $('#sSelectTwo').val() + ',' + $('#sSelectThree').val();
   scope.colorSubmarineDivs(sValue);
   console.log(sValue);
   return sValue;
@@ -181,7 +127,7 @@ ShipStrikeGame.prototype.colorSubmarineDivs = function(sValue) {
 };
 
 ShipStrikeGame.prototype.setComputer = function() {
-  var computerLocations;
+  computerLocations = this.computerLocations;
   var firstSpot = twoSpotLocations[Math.floor(Math.random() * twoSpotLocations.length)];
   var secondSpot = twoSpotLocations[Math.floor(Math.random() * twoSpotLocations.length)];
   var firstSplit = firstSpot.split(',');
@@ -206,7 +152,6 @@ ShipStrikeGame.prototype.setComputer = function() {
       thirdSpot = thirdSpot;
     }
   }
-  computerLocations = [];
   computerLocations.push(firstSpot);
   computerLocations.push(secondSpot);
   computerLocations.push(thirdSpot);
@@ -234,9 +179,9 @@ $('.start').on('click', function() {
 };
 
 
-ShipStrikeGame.prototype.playerMove = function(pValue, dValue, sValue) {
+ShipStrikeGame.prototype.playerMove = function() {
 var scope = this;
-var playerScore = 0;
+playerScore = this.playerScore;
 $('.computerCell').on('click', function(){
   computerLocations = scope.computerLocations;
   console.log(pValue);
@@ -269,46 +214,61 @@ if ($compCell.attr('id') === 'hit'){
   playerScore++;
   console.log(playerScore);
 }
+else if ($compCell.attr('id') === 'miss'){
+  alert('It was a MISS! Reload!');
+}
 scope.computerMove(pValue, dValue, sValue);
 })
 };
 
-ShipStrikeGame.prototype.computerMove = function(pValue, dValue, sValue) {
+ShipStrikeGame.prototype.computerMove = function(pValue, dValue, sValue, playerGameState) {
+  playerGameState = this.playerGameState;
   console.log(pValue);
-  var compAttack = this.playerGameState[Math.floor(Math.random() * twoSpotLocations.length)];
-  console.log(compAttack);
-  var playerLocations = [];
-  var compScore = 0;
+  var $compAttack = playerGameState[Math.floor(Math.random() * twoSpotLocations.length)];
+  console.log($compAttack);
+  console.log("1 working");
+  compScore = this.compScore;
+  console.log("2 working");
   var pValSplit = pValue.split(',');
   var dValSplit = dValue.split(',');
   var sValSplit = sValue.split(',');
-  for(var i=0; i < sValue.length; i++) {
+  console.log("3 working");
+  var playerLocations = [];
+  console.log("4 working");
+  for(var i=0; i < pValue.length; i++) {
+    console.log("5 working");
     playerLocations.push(pValSplit[i]);
     playerLocations.push(dValSplit[i]);
-    playerLocations.push(sValSplit[i]);
     console.log(playerLocations);
     if ($.inArray($compAttack, playerLocations)> -1){
-      alert('The computer has HIT your ship!');
-      $('#' + compAttack).css({'color':'white'});
-      $('#' + compAttack).css({'background-image':'url("./images/hit.png")'});
-      $('#' + compAttack).css({'background-color':'red'});
-      $('#' + compAttack).text('HIT');
+      console.log("comp hit your ship");
+      console.log($compAttack);
+      $('#' + $compAttack).css({'color':'white'});
+      $('#' + $compAttack).css({'background-image':'url("./images/hit.png")'});
+      $('#' + $compAttack).css({'background-color':'red'});
+      $('#' + $compAttack).text('HIT');
+      $('#' + $compAttack).attr('class','hit');
+
     }
     else {
-      $('#' + compAttack).css({'background-color':'navy'});
-      $('#' + compAttack).css({'color':'white'});
-      $('#' + compAttack).text('MISS');
-      $('#' + compAttack).attr('id','hit');
+      console.log("comp missed your ship");
+      $('#' + $compAttack).css({'background-color':'navy'});
+      $('#' + $compAttack).css({'color':'white'});
+      $('#' + $compAttack).text('MISS');
     }
   }
-  if ($compAttack.attr('id') === 'hit'){
-    playerScore++;
-    console.log(playerScore);
+  $compAttack = parseInt($compAttack) + 24;
+  console.log($compAttack);
+  if ($('#' + $compAttack).value === 'hit') {
+    console.log("The computer HIT your ship!!!");
+    compScore += 1;
   }
-  playGame(playerScore, compScore);
+  this.playGame(this.playerscore, this.compscore);
 };
 
 ShipStrikeGame.prototype.playGame = function(playerScore, compScore){
+  playerScore = this.playerScore;
+  compScore = this.compScore;
   if (playerScore === 7) {
     alert("You've sunk all the computers ships! Player 1 is the Winner!");
     var answer = prompt("Play again? 'Yes' or 'No'?");
